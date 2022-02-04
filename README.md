@@ -1,8 +1,9 @@
 # jupy
 Mini deep learning library
 
-It can calculate gradient of functions (more of them soon)
 Coded in pure numpy (for learning purposes and fun)
+
+It can calculate gradient of functions (more of them soon)
 
 Next steps:
   
