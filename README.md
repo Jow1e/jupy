@@ -3,7 +3,7 @@ Mini deep learning library
 
 Coded in pure numpy (for learning purposes and fun)
 
-It can calculate gradient of functions (more of them soon)
+It can calculate gradient of complex functions (more of them soon)
 
 Next steps:
   
