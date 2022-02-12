@@ -12,24 +12,24 @@ def mse_backward(grad, inputs, cache):
 	return out, -out
 
 
-def cross_entropy_forward(logits, labels):
+def cross_entropy_forward(pred, labels):
 	# get batch
-	batch_size = len(logits)
+	batch_size = len(pred)
 	batch_dim = range(batch_size)
 	
 	# softmax(logit)
 	# subtract max to avoid exp overflow
-	logits = np.exp(logits - np.max(logits, axis=1, keepdims=True))
-	logits /= logits.sum(axis=1, keepdims=True)
+	pred = np.exp(pred - np.max(pred, axis=1, keepdims=True))
+	pred /= pred.sum(axis=1, keepdims=True)
 	
 	# calculate loss
-	loss = -np.log(logits[batch_dim, labels]).mean()
+	loss = -np.log(pred[batch_dim, labels]).mean()
 	
 	# calculate gradient (as cache)
-	logits[batch_dim, labels] -= 1
-	logits /= batch_size
+	pred[batch_dim, labels] -= 1
+	pred /= batch_size
 	
-	return loss, logits
+	return loss, pred
 
 
 def cross_entropy_backward(grad, inputs, cache):
