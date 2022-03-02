@@ -71,4 +71,4 @@ def log_forward(input):
 
 
 def log_backward(grad, inputs, cache):
-	return grad / inputs,
+	return grad / inputs[0],
